@@ -1,0 +1,12 @@
+
+/* 
+    Main css file.
+*/
+
+html {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding: 1rem;
+}
