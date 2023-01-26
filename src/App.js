@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Page imports
 import AdminManageInventory from './components/pages/AdminManageInventory';
 import AdminSettings from './components/pages/AdminSettings';
-import AdminAddPage from './components/pages/AdminAddPage';
+import AdminAddPage from './components/pages/AdminAddProduct';
 import PreLaunch from './components/pages/PreLaunch';
 import Dashboard from './components/pages/Dashboard';
 import Header from './components/component/Header';
