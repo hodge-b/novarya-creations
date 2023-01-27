@@ -11,7 +11,7 @@ export default function Login() {
         <div className="p-1 container text-center">
             <h2 className="mt-5 display-5">Login</h2>
             <form className="p-5 mt-5 container shadow rounded w-50 text-start" style={{backgroundColor: "#fff"}}>
-                <div className="mb-3">
+                <div className="mb-4">
                     <label className="form-label" htmlFor="inputUsername">Username</label>
                     <input 
                         className="form-control"
@@ -21,7 +21,7 @@ export default function Login() {
                         onChange={e => setUsername(e.target.value)}
                     />
                 </div>
-                <div className="mb-3">
+                <div className="mb-4">
                     <label className="form-label" htmlFor="inputPassword">Password</label>
                     <input 
                         className="form-control"
