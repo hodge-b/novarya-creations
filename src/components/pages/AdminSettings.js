@@ -19,6 +19,10 @@ export default function AdminSettings({onclick}) {
                             <div className="admin-settings--btn--change-password row"><div className="admin-settings--btn--change-password col"><i className="admin-settings--btn--change-password ri-lock-password-fill display-1"></i></div></div>
                             <div className="admin-settings--btn--change-password row"><div className="admin-settings--btn--change-password col mt-5 h3">Change Password</div></div>
                         </div>
+                        <div className="admin-settings--btn--api-configuration p-5 m-5 col-5 container shadow rounded btn" onClick={onclick}>
+                            <div className="admin-settings--btn--api-configuration row"><div className="admin-settings--btn--api-configuration col"><i className="admin-settings--btn--api-configuration ri-computer-fill display-1"></i></div></div>
+                            <div className="admin-settings--btn--api-configuration row"><div className="admin-settings--btn--api-configuration col mt-5 h3">API Configuration</div></div>
+                        </div>
                     </div>
                 </div>
             </div>
