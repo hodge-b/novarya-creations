@@ -10,6 +10,7 @@ import AdminAddProduct from './components/pages/AdminAddProduct';
 import AdminManageInventory from './components/pages/AdminManageInventory';
 import AdminSettings from './components/pages/AdminSettings';
 import Header from './components/component/Header';
+import ChangePassword from './components/pages/AdminChangePassword';
 
 
 export default function Controller() {
@@ -69,6 +70,9 @@ export default function Controller() {
             case 'admin-settings--btn--go-back':
                 navigate(customRoutes.admin_dashboard);
                 break;
+            case 'admin-settings--btn--change-password':
+                navigate(customRoutes.admin_settings_change_password);
+                break;
             default:
                 navigate(customRoutes.admin_dashboard);
                 break;
@@ -85,6 +89,7 @@ export default function Controller() {
                 <Route path={customRoutes.admin_add_product} element={<AdminAddProduct onclick={onAddProductButtonClick} />} />
                 <Route path={customRoutes.admin_manage_inventory} element={<AdminManageInventory onclick={onManageInventoryButtonClick} />} />
                 <Route path={customRoutes.admin_settings} element={<AdminSettings onclick={onSettingsButtonClick} />} />
+                <Route path={customRoutes.admin_settings_change_password} element={<ChangePassword onclick={onSettingsButtonClick} />} />
             </Routes>
         </>
     )
