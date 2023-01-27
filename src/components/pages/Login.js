@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate} from 'react-router-dom';
-import Button from 'react-bootstrap/Button'
 
 export default function Login() {
     const [username, setUsername] = useState('');
@@ -9,9 +8,9 @@ export default function Login() {
     let navigate = useNavigate();
 
     return(
-        <div className="p-1 container">
-            <h2 className="text-center">Login</h2>
-            <form className="mt-3 p-3 border rounded">
+        <div className="p-1 container text-center">
+            <h2 className="mt-5 display-5">Login</h2>
+            <form className="p-5 mt-5 container shadow rounded w-50 text-start">
                 <div className="mb-3">
                     <label className="form-label" htmlFor="inputUsername">Username</label>
                     <input 
@@ -33,7 +32,7 @@ export default function Login() {
                     />
                 </div>
                 <div className="text-center">
-                    <Button className='btn btn-info center' onClick={() => {navigate('/admin/dashboard')}}>Login</Button>
+                    <button className='btn text-info shadow-sm center' onClick={() => {navigate('/admin/dashboard')}}>Login</button>
                 </div>
             </form>
         </div>
