@@ -62,6 +62,19 @@ export default function Controller() {
         }
     }
 
+    // Manage inventory button clicks
+    const onSettingsButtonClick = e => {
+        const buttonLabel = e.target.className.split(" ")[0];
+        switch(buttonLabel) {
+            case 'admin-settings--btn--go-back':
+                navigate(customRoutes.admin_dashboard);
+                break;
+            default:
+                navigate(customRoutes.admin_dashboard);
+                break;
+        }
+    }
+
     return(
         <>
             <Header />
@@ -71,7 +84,7 @@ export default function Controller() {
                 <Route path={customRoutes.admin_dashboard} element={<Dashboard authorized={true} onclick={onAdminDashboardButtonClick}/>} />
                 <Route path={customRoutes.admin_add_product} element={<AdminAddProduct onclick={onAddProductButtonClick} />} />
                 <Route path={customRoutes.admin_manage_inventory} element={<AdminManageInventory onclick={onManageInventoryButtonClick} />} />
-                <Route path={customRoutes.admin_settings} element={<AdminSettings />} />
+                <Route path={customRoutes.admin_settings} element={<AdminSettings onclick={onSettingsButtonClick} />} />
             </Routes>
         </>
     )

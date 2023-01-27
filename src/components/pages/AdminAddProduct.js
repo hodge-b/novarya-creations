@@ -6,7 +6,7 @@ export default function AdminAddProduct({onclick}) {
             <div className="container text-center">
                 <h2 className="mt-5 display-5">Add Product</h2>
             </div>
-            <div className="p-5 mt-5 container shadow rounded">
+            <div className="p-5 mt-5 container shadow rounded" style={{backgroundColor: "#fff"}}>
                 <form>
                     <div className="mb-4">
                         <label className="form-label" htmlFor="product-name">Product Name</label>
