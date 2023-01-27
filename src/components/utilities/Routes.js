@@ -7,4 +7,5 @@ export const customRoutes = {
     admin_settings_api_configuration: "/admin/settings/api-configuration",
     index: "/home",
     login: "/login",
+    pre_launch: "/",
 }
