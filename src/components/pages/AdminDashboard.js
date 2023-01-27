@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navigate} from 'react-router-dom';
 
-export default function Dashboard({authorized, onclick}) {
+export default function AdminDashboard({authorized, onclick}) {
     // Redirect user if not authorized.
     if (!authorized) {
         return <Navigate replace to="/login" />
