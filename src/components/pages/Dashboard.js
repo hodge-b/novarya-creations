@@ -11,7 +11,7 @@ export default function Dashboard({authorized, onclick}) {
         <>
             <div className="container text-center">
                 <h2 className="mt-5 display-5">Admin Dashboard</h2>
-                <div className="mt-5 container">
+                <div className="p-5 mt-5 container shadow rounded" style={{backgroundColor: "#fff"}}>
                     <div className="row">
                         <div className="admin-dashboard--btn--add-product p-5 m-5 col-5 container shadow rounded btn" onClick={onclick}>
                             <div className="admin-dashboard--btn--add-product row"><div className="admin-dashboard--btn--add-product col"><i className="admin-dashboard--btn--add-product ri-file-edit-fill display-1"></i></div></div>

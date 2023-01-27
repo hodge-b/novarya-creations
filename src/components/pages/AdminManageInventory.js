@@ -12,9 +12,9 @@ export default function AdminManageInventory({onclick}) {
         <>
             <div className="container">
                 <h2 className="mt-5 display-5 text-center">Manage Inventory</h2>
-                <div className="p-5 mt-5 container shadow rounded">
+                <div className="p-5 mt-5 container shadow rounded" style={{backgroundColor: "#fff"}}>
                     <div className="d-flex justify-content-between p-2">
-                        <input className="form-control w-50" type="text" placeholder="Search" />
+                        <input className="form-control w-75" type="text" placeholder="Search" />
                         <div className="container w-25 text-end">
                             <div className="container shadow-sm btn w-25" onClick={onclick}>
                                 <i className="ri-arrow-go-back-fill display-6 text-info"></i>

@@ -10,7 +10,7 @@ export default function Login() {
     return(
         <div className="p-1 container text-center">
             <h2 className="mt-5 display-5">Login</h2>
-            <form className="p-5 mt-5 container shadow rounded w-50 text-start">
+            <form className="p-5 mt-5 container shadow rounded w-50 text-start" style={{backgroundColor: "#fff"}}>
                 <div className="mb-3">
                     <label className="form-label" htmlFor="inputUsername">Username</label>
                     <input 
@@ -31,7 +31,7 @@ export default function Login() {
                         onChange={e => setPassword(e.target.value)}
                     />
                 </div>
-                <div className="text-center">
+                <div className="mt-5 text-center">
                     <button className='btn text-info shadow-sm center' onClick={() => {navigate('/admin/dashboard')}}>Login</button>
                 </div>
             </form>
