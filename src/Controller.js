@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { customRoutes } from './components/utilities/Routes';
 
 // Page imports
 import PreLaunch from './components/pages/PreLaunch';
@@ -17,22 +18,46 @@ export default function Controller() {
     // Admin dashboard button clicks
     const onAdminDashboardButtonClick = e => {
         const buttonLabel = e.target.className.split(" ")[0];
-        
-        // Button routes
         switch(buttonLabel) {
             case 'admin-dashboard--btn--add-product':
-                navigate('/admin/add-product');
+                navigate(customRoutes.admin_add_product);
                 break;
             case 'admin-dashboard--btn--manage-inventory':
-                navigate('/admin/manage-inventory');
+                navigate(customRoutes.admin_manage_inventory);
                 break;
             case 'admin-dashboard--btn--store-front':
-                navigate('/home');
+                navigate(customRoutes.index);
                 break;
             case 'admin-dashboard--btn--settings':
-                navigate('/admin/settings');
+                navigate(customRoutes.admin_settings);
                 break;
             default:
+                break;
+        }
+    }
+
+    // Add product button clicks
+    const onAddProductButtonClick = e => {
+        const buttonLabel = e.target.className.split(" ")[0];
+        switch(buttonLabel) {
+            case 'admin-add-product--btn--cancel':
+                navigate(customRoutes.admin_dashboard);
+                break;
+            default:
+                navigate(customRoutes.admin_dashboard);
+                break;
+        }
+    }
+
+    // Manage inventory button clicks
+    const onManageInventoryButtonClick = e => {
+        const buttonLabel = e.target.className.split(" ")[0];
+        switch(buttonLabel) {
+            case 'admin-manage-inventory--btn--go-back':
+                navigate(customRoutes.admin_dashboard);
+                break;
+            default:
+                navigate(customRoutes.admin_dashboard);
                 break;
         }
     }
@@ -42,11 +67,11 @@ export default function Controller() {
             <Header />
             <Routes>
                 <Route path='/' element={<PreLaunch />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/admin/dashboard' element={<Dashboard authorized={true} onclick={onAdminDashboardButtonClick}/>} />
-                <Route path='/admin/add-product' element={<AdminAddProduct />} />
-                <Route path='/admin/manage-inventory' element={<AdminManageInventory />} />
-                <Route path='/admin/settings' element={<AdminSettings />} />
+                <Route path={customRoutes.login} element={<Login />} />
+                <Route path={customRoutes.admin_dashboard} element={<Dashboard authorized={true} onclick={onAdminDashboardButtonClick}/>} />
+                <Route path={customRoutes.admin_add_product} element={<AdminAddProduct onclick={onAddProductButtonClick} />} />
+                <Route path={customRoutes.admin_manage_inventory} element={<AdminManageInventory onclick={onManageInventoryButtonClick} />} />
+                <Route path={customRoutes.admin_settings} element={<AdminSettings />} />
             </Routes>
         </>
     )
