@@ -104,7 +104,7 @@ export default function App() {
 
     return(
         <ThemeProvider breakpoints={['xxxl','xxl','xl','lg','md','sm','xs','xxs']} minBreakpoint='xxs'>
-            <Header />
+            {/*<Header /> */}
             <Routes>
                 <Route path={customRoutes.pre_launch} element={<PreLaunch />} />
                 <Route path={customRoutes.index} element={<Home />} />

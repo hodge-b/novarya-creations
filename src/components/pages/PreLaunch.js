@@ -7,8 +7,7 @@ export default function PreLaunch() {
             <h3>Welcome to</h3>
             <h2>Novarya Creations!</h2>
             <p className="mt-5">This website is currently under construction. <br /> 
-            If you are the administrator <Link to="/login">login here</Link></p>
-            <i className="ri-hammer-line display-1"></i>
+            <span className="h4">Come back soon!</span></p>
         </div>
     )
 }
