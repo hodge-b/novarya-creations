@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
-export default function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
+export default function Login( {user, setUser, onclick}) {
     let navigate = useNavigate();
 
     return(
@@ -17,8 +14,8 @@ export default function Login() {
                         className="form-control"
                         id="inputUsername"
                         type="text"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
+                        value={user.name}
+                        onChange={e => setUser(prevUser => {return{...prevUser, name: e.target.value}})}
                     />
                 </div>
                 <div className="mb-4">
@@ -27,12 +24,12 @@ export default function Login() {
                         className="form-control"
                         id="inputPassword"
                         type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        value={user.password}
+                        onChange={e => setUser(prevUser => {return{...prevUser, password: e.target.value}})}
                     />
                 </div>
                 <div className="mt-5 text-center">
-                    <button className='btn text-info shadow-sm center' onClick={() => {navigate('/admin/dashboard')}}>Login</button>
+                    <button className='login--btn btn text-info shadow-sm center' onClick={onclick}>Login</button>
                 </div>
             </form>
         </div>

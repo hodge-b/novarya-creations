@@ -2,7 +2,8 @@ import { customRoutes } from './components/utilities/Routes';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState , useEffect } from 'react';
+import axios from 'axios';
 
 // Page imports
 import PreLaunch from './components/pages/PreLaunch';
@@ -35,9 +36,16 @@ export default function App() {
     let navigate = useNavigate();
     const [state, dispatch] = useReducer(reducer, {});
     const [viewMode, setViewMode] = useState(VIEW_MODE.PRE_LAUNCH);
+    const [login, setLogin] = useState(false);
+    const [user, setUser] = useState({
+        name: "", 
+        password: ""
+    });
+
 
     // Admin dashboard button clicks
     const onAdminDashboardButtonClick = e => {
+        e.preventDefault();
         const buttonLabel = e.target.className.split(" ")[0];
         switch(buttonLabel) {
             case 'admin-dashboard--btn--add-product':
@@ -59,6 +67,7 @@ export default function App() {
 
     // Add product button clicks
     const onAddProductButtonClick = e => {
+        e.preventDefault();
         const buttonLabel = e.target.className.split(" ")[0];
         switch(buttonLabel) {
             case 'admin-add-product--btn--cancel':
@@ -72,6 +81,7 @@ export default function App() {
 
     // Manage inventory button clicks
     const onManageInventoryButtonClick = e => {
+        e.preventDefault();
         const buttonLabel = e.target.className.split(" ")[0];
         switch(buttonLabel) {
             case 'admin-manage-inventory--btn--go-back':
@@ -85,6 +95,7 @@ export default function App() {
 
     // Manage inventory button clicks
     const onSettingsButtonClick = e => {
+        e.preventDefault();
         const buttonLabel = e.target.className.split(" ")[0];
         switch(buttonLabel) {
             case 'admin-settings--btn--go-back':
@@ -102,13 +113,30 @@ export default function App() {
         }
     }
 
+    // Manage login button clicks
+    const onLoginButtonClick = e => {
+        e.preventDefault();
+        const buttonLabel = e.target.className.split(" ")[0];
+        switch(buttonLabel) {
+            case 'login--btn':
+                axios.get(`https://novarya-creations-api.onrender.com/login`)
+                .then(response => {
+                    console.log(response)
+                });
+                break;
+            default:
+                navigate(customRoutes.home);
+                break;
+        }
+    }
+    
     return(
         <ThemeProvider breakpoints={['xxxl','xxl','xl','lg','md','sm','xs','xxs']} minBreakpoint='xxs'>
             {/*<Header /> */}
             <Routes>
                 <Route path={customRoutes.pre_launch} element={<PreLaunch />} />
                 <Route path={customRoutes.index} element={<Home />} />
-                <Route path={customRoutes.login} element={<Login />} />
+                <Route path={customRoutes.login} element={<Login user={user} setUser={setUser} onclick={onLoginButtonClick} />} />
                 <Route path={customRoutes.admin_dashboard} element={<AdminDashboard authorized={true} onclick={onAdminDashboardButtonClick}/>} />
                 <Route path={customRoutes.admin_add_product} element={<AdminAddProduct onclick={onAddProductButtonClick} />} />
                 <Route path={customRoutes.admin_manage_inventory} element={<AdminManageInventory onclick={onManageInventoryButtonClick} />} />
