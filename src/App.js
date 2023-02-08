@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import AddProduct from './pages/AddProduct';
 import Settings from "./pages/Settings";
 import Inventory from "./pages/Inventory";
+import ChangePassword from "./pages/ChangePassword";
+import ConfigureAPI from './pages/ConfigureAPI';
 
 function App() {
     return (
@@ -24,6 +26,8 @@ function App() {
                     <Route path='/add-product' element={<AddProduct />} />
                     <Route path='/inventory' element={<Inventory />} />
                     <Route path='/settings' element={<Settings />}/>
+                    <Route path='/change-password' element={<ChangePassword />}/>
+                    <Route path='/configure-api' element={<ConfigureAPI />}/>
                 </Route>
             </Route>
         </Routes>

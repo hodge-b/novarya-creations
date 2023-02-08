@@ -35,10 +35,12 @@ function Dashboard() {
                 
                 <h1 className='display-4'>Dashboard</h1>
                 <div className="mt-4 container">
-                    <DashboardButton childClass='btn__dashboard__add-product' icon='ri-price-tag-3-fill' title='Add Product' onclick={handleClick} />
-                    <DashboardButton childClass='btn__dashboard__inventory' icon='ri-file-edit-fill' title='Inventory' onclick={handleClick} />
-                    <DashboardButton childClass='btn__dashboard__store-front' icon='ri-store-3-fill' title='Store Front' onclick={handleClick} />
-                    <DashboardButton childClass='btn__dashboard__settings' icon='ri-settings-5-fill' title='Settings' onclick={handleClick} />
+                    <div className="row justify-content-center">
+                        <DashboardButton childClass='btn__dashboard__add-product' icon='ri-price-tag-3-fill' title='Add Product' onclick={handleClick} />
+                        <DashboardButton childClass='btn__dashboard__inventory' icon='ri-file-edit-fill' title='Inventory' onclick={handleClick} />
+                        <DashboardButton childClass='btn__dashboard__store-front' icon='ri-store-3-fill' title='Store Front' onclick={handleClick} />
+                        <DashboardButton childClass='btn__dashboard__settings' icon='ri-settings-5-fill' title='Settings' onclick={handleClick} />
+                    </div>
                 </div>
             </section>
         </>

@@ -55,37 +55,44 @@ function Login() {
 
     return (
         <section className='p-1 container text-center'>
-            <h1 className='p-1 display-4 text-center'>Login</h1>
-            <form className='p-1 mt-4 border rounded' onSubmit={handleSubmit}>
-                <div className="p-1 my-2 text-danger rounded container text-start">{errorMessage}</div>
-                {isLoading ?
-                <div className="spinner-border" role='status'>
-                    <span className="sr-only"></span>
-                </div>
-                :
-                ''}
-                <div className='mt-3  text-start'>
-                    <label>Username</label>
-                    <input 
-                        className='form-control'
-                        type="text"
-                        value={user}
-                        onChange={e => setUser(e.target.value)}
-                        required
-                    />
-                </div>
-
-                <div className='mt-4  text-start'>
-                    <label>Password</label>
-                    <input className='form-control'
-                        type='password' 
-                        value={pwd}
-                        onChange={e => setPwd(e.target.value)}
-                        required
-                    />
-                </div>
-                <button className='btn mt-4 text-white btn-info'>Login</button>
-            </form>
+            <div className="row">
+                <h1 className='col-12 p-1 display-4'>Login</h1>
+            </div>
+            <div className="row justify-content-center">
+                <form className='col-11 col-sm-8 col-md-6 p-1 mt-4 container border rounded' onSubmit={handleSubmit}>
+                    <div className="p-1 my-2 text-danger rounded container text-start">{errorMessage}</div>
+                    {isLoading ?
+                    <div className="spinner-border text-info" role='status'>
+                        <span className="sr-only"></span>
+                    </div>
+                    :
+                    ''}
+                    <div className="row justify-content-center">
+                        <div className='col-12 col-sm-10 mt-3 text-start'>
+                            <label>Username</label>
+                            <input 
+                                className='form-control'
+                                type="text"
+                                value={user}
+                                onChange={e => setUser(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className='col-12 col-sm-10 mt-4 text-start'>
+                            <label>Password</label>
+                            <input className='form-control'
+                                type='password' 
+                                value={pwd}
+                                onChange={e => setPwd(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <button className='btn mt-4 mb-3 text-white btn-info' style={{maxWidth: 'max-content'}}>Login</button>
+                </form>
+            </div>
         </section>
     )
 }
