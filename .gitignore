@@ -14,3 +14,4 @@
 # misc
 .env.development
 .env.production
+.env
