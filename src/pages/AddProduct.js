@@ -34,6 +34,7 @@ function AddProduct() {
         axios.post(LOGIN_URL, formData)
         .then(response => console.log(response))
         .catch(err => console.error(err));
+        navigate('/dashboard');
     }
 
     return (
